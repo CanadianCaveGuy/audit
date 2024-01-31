@@ -17,6 +17,10 @@ lint = true
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
 resolve_s3 = true
+stack_name = "AuditCentralTest"
+s3_prefix = "AuditCentralTest"
+region = "ca-central-1"
+image_repositories = []
 
 [default.package.parameters]
 resolve_s3 = true
