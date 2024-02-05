@@ -129,7 +129,6 @@ Resources:
   SampleTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
-      Role: arn:aws:iam::067080767260:role/WebAuditDeveloper
       PrimaryKey:
         Name: id
         Type: String
