@@ -15,7 +15,6 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: Prod
-      Role: arn:aws:iam::067080767260:role/WebAuditDeveloper
       Cors:
         AllowMethods: "'OPTIONS, POST, GET'"
         AllowHeaders: "'Content-Type'"
