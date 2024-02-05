@@ -15,6 +15,7 @@ Resources:
     Type: AWS::Serverless::Api
     Properties:
       StageName: Prod
+      Role: arn:aws:iam::067080767260:role/WebAuditDeveloper
       Cors:
         AllowMethods: "'OPTIONS, POST, GET'"
         AllowHeaders: "'Content-Type'"
@@ -26,6 +27,7 @@ Resources:
     Properties:
       CodeUri: backend/
       Handler: src/handlers/get-all-items.getAllItemsHandler
+      Role: arn:aws:iam::067080767260:role/WebAuditDeveloper
       Runtime: nodejs20.x
       Architectures:
       - x86_64
@@ -60,6 +62,7 @@ Resources:
     Properties:
       CodeUri: backend/
       Handler: src/handlers/get-by-id.getByIdHandler
+      Role: arn:aws:iam::067080767260:role/WebAuditDeveloper
       Runtime: nodejs20.x
       Architectures:
       - x86_64
@@ -94,7 +97,9 @@ Resources:
     Properties:
       CodeUri: backend/
       Handler: src/handlers/put-item.putItemHandler
+      Role: arn:aws:iam::067080767260:role/WebAuditDeveloper
       Runtime: nodejs20.x
+      Role:
       Architectures:
       - x86_64
       MemorySize: 128
@@ -125,6 +130,7 @@ Resources:
   SampleTable:
     Type: AWS::Serverless::SimpleTable
     Properties:
+      Role: arn:aws:iam::067080767260:role/WebAuditDeveloper
       PrimaryKey:
         Name: id
         Type: String
@@ -136,6 +142,7 @@ Resources:
   WebSiteBucket:
     Type: AWS::S3::Bucket
     Properties:
+      Role: arn:aws:iam::067080767260:role/WebAuditDeveloper
       BucketEncryption:
         ServerSideEncryptionConfiguration:
         - BucketKeyEnabled: true
